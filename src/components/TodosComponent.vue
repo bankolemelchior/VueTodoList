@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TodoHeader/>
+    <TodoHeader @add-todo="addTodo"/>
 
     <!-- liste des tâches -->
     <main class="main">
@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import type { Todo } from '@/@types';
 import { ref } from "vue";
+import { nanoid } from 'nanoid';
 import TodoFooter from "../components/TodoFooter.vue";
 import TodoHeader from "../components/TodoHeader.vue";
 const count = 1;
@@ -36,6 +37,14 @@ const todos = ref<Todo[]>([
   {id:'350e2d74-16c9-4911-8f26-f161b7deab66', title:'Ma tâche 3', completed:false, started:false},
   {id:'676fb886-fdcf-4430-96f4-9aac47434a66', title:'Ma tâche 4', completed:false, started:false}
 ]);
+
+function addTodo(value: string) {
+  todos.value.push({
+id: nanoid(),
+title: value,
+completed: false
+})
+}
 </script>
 
 <style scoped></style>
