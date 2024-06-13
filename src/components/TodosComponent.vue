@@ -25,15 +25,16 @@
 </template>
 
 <script setup lang="ts">
+import type { Todo } from '@/@types';
 import { ref } from "vue";
 import TodoFooter from "../components/TodoFooter.vue";
 import TodoHeader from "../components/TodoHeader.vue";
 const count = 1;
-const todos = ref([
-  {id:'15fc4791-46cf-449b-beaf-ba7439e2fd31', title:'Ma tâche ', completed:false, started:false},
-  {id:'4e8f02b7-3d21-46c9-982e-caa963a6e961', title:'Ma tâche ', completed:false, started:false},
-  {id:'350e2d74-16c9-4911-8f26-f161b7deab66', title:'Ma tâche ', completed:false, started:false},
-  {id:'676fb886-fdcf-4430-96f4-9aac47434a66', title:'Ma tâche ', completed:false, started:false}
+const todos = ref<Todo[]>([
+  {id:'15fc4791-46cf-449b-beaf-ba7439e2fd31', title:'Ma tâche 1', completed:false, started:false},
+  {id:'4e8f02b7-3d21-46c9-982e-caa963a6e961', title:'Ma tâche 2', completed:false, started:false},
+  {id:'350e2d74-16c9-4911-8f26-f161b7deab66', title:'Ma tâche 3', completed:false, started:false},
+  {id:'676fb886-fdcf-4430-96f4-9aac47434a66', title:'Ma tâche 4', completed:false, started:false}
 ]);
 </script>
 
